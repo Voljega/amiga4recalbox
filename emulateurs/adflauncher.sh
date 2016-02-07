@@ -3,7 +3,7 @@ uae4armPath="/emulateurs/amiga/uae4arm"
 mountPoint="/ram"
 
 #mounting 24M ram on $mountpoint  
-echo "Mounting 24M ram on $mountPoint"
+echo "Mounting 24M ram on $mountPoint for use of adf $1"
 mount -t tmpfs -o size=24M tmpfs $mountPoint
 
 #copy Amiga OS Files
@@ -12,6 +12,7 @@ mkdir $mountPoint/uae4arm
 cp -R $uae4armPath/* $mountPoint/uae4arm
 cd $mountPoint/uae4arm/conf
 
+# ----- CREATE adfdir.conf -----
 # On créer un fichier au démarrage du script pour configurer uae4arm
 touch raw.uae
 
@@ -40,7 +41,7 @@ echo "gfx_correct_aspect=true" >> raw.uae
 echo "gfx_center_horizontal=simple" >> raw.uae
 echo "gfx_center_vertical=simple" >> raw.uae
 
-#regenerate adfdir.conf
+#regenerate uaeconfig.uae
 rm $mountPoint/uae4arm/conf/adfdir.conf
 touch adfdir.conf
 echo "path=$mountPoint/uae4arm/adf/" >> adfdir.conf
@@ -60,7 +61,7 @@ echo "Diskfile=$mountPoint/uae4arm/State_Of_The_Art.adf" >> adfdir.conf
 # On place le fichier au bon endroit et on lance l'emulateur.
 cd $mountPoint/uae4arm/
 rm $mountPoint/uae4arm/conf/uaeconfig.uae
-mv $mountPoint/uae4arm/conf/raw.uae conf/uaeconfig.uae
+mv $mountPoint/uae4arm/conf/raw.uae $mountPoint/uae4arm/conf/uaeconfig.uae
 ./uae4arm
 
 # unmount with -l to avoid resource busy
