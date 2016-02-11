@@ -15,6 +15,7 @@ Usage :
 -------
 - /emulateurs/amigascript.sh is the main script used for launching games in every format
 - /emulateurs/genUae.sh is used to generate uae files for your WHD folders
+- DO NOT USE THE OTHERS SCRIPTS, there are for internal usage by amigascript.sh only
 - emulator can be quit with either the key shown at the beginning or stroke ctrl and select 'Quit'
 - keyboard and mouse are mandatory as many amiga games need custom key strokes to launch games
 - games are launched by cd /emulateurs/amiga/uae4arm and then depending on the type
