@@ -1,1 +1,53 @@
-"# amiga4recalbox" 
+Custom Amiga Emulation for Recalbox
+
+Compatible with ADF, WHD folders, and TinyLauncher
+
+Installation :
+--------------
+- copy /emulateurs to you root directory
+- give chmod 777 to every script files in /emulateurs
+- verify that /emulateurs/amiga/uae4arm/uae4arm has 777 rights
+- mkdir ram at root directory (this will be used by the script has a ram drive)
+- copy /amiga contents to your /recalbox/share/roms/amiga and give 777 rights to TinyLauncher3 dir recursively
+- integration with EmulationStation comming soon (but it's pretty easy to do, just modify es_systems.cfg to add amiga conf)
+
+Usage :
+-------
+- /emulateurs/amigascript.sh is the main script used for launching games in every format
+- /emulateurs/genUae.sh is used to generate uae files for your WHD folders
+- emulator can be quit with either the key shown at the beginning or stroke ctrl and select 'Quit'
+- keyboard and mouse are mandatory as many amiga games need custom key strokes to launch games
+- games are launched by cd /emulateurs/amiga/uae4arm and then depending on the type
+./uae4arm /recalbox/share/roms/amiga/SampleWHDGame.uae (see below)
+./uae4arm /recalbox/share/roms/amiga/SampleADFGame.adf
+./uae4arm /recalbox/share/roms/amiga/TinyLauncher.uae
+
+ADF games
+---------
+just copy them to your amiga roms folder, if the game uses several ADF, make sure that the different adfs have the same name except for the number at the end
+
+WHD games in direct mode
+-------------------------------
+- unzip them, delete the .info file at the same level than the folder
+- you'll need a .uae file at the same level than the folder with the same name, you can either grab one from our pack (coming soon) or generate one (genUAE.sh /recalbox/share/roms/amiga will generate an uae for every folder in the rom folders, you can off course use subfolders), you can also simply copy and rename the sample uae file from /emulateurs
+
+WHD games with TinyLauncher
+---------------------------
+- unzip them, delete the .info file at the same level than the folder
+- copy the game folder to /recalbox/share/roms/amiga/TinyLauncher3/GAMES
+- launch TinyLauncher, click on ESC, then F1, let computation ends then ESC again, GAMES and select your game
+ 
+KNOWN BUGS :
+------------
+- WHD folders with '&' in their names don't launch and will force you to reboot your recalbox
+- Launching a SampleWHDGame.uae with no folder at the same level with name 'SampleWHDGame' will cause the emulator to crash and force you to reboot your recalbox
+- WHD games using several slaves can have intros shown after game itself
+- aspect ratio and image centering : you'll have to modify your uaes manually for the moment, for parameters force_aspectratio use true if you're in widescreen (16/9) or false in 4/3, next two parameters for centering should be put to simple
+
+COMING SOON :
+-------------
+- HD format games integration
+- bugs correction
+- custom uae packs for most well known games
+- unique key configuration for quitting game
+- doc for ES integration
