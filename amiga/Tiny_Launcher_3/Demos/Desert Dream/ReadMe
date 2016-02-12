@@ -1,0 +1,59 @@
+
+
+	THIS  PACKAGE  COMES  WITH ABSOLUTELY NO WARRANTY OF ANY KIND, EITHER
+	EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE.
+
+	THE  ENTIRE RISK AS TO USE, RESULTS AND PERFORMANCE OF THE PACKAGE IS
+	ASSUMED  BY  YOU AND IF THE PACKAGE SHOULD PROVE TO BE DEFECTIVE, YOU
+	ASSUME  THE  ENTIRE  COST OF ALL NECESSARY SERVICING, REPAIR OR OTHER
+	REMEDIATION.
+
+	UNDER  NO  CIRCUMSTANCES,  CAN THE AUTHOR BE HELD RESPONSIBLE FOR ANY
+	DAMAGE  CAUSED  IN ANY USUAL, SPECIAL, OR ACCIDENTAL WAY, ALSO IF THE
+	OWNER  OR  A  THIRD  PARTY  HAS BEEN POINTED AT SUCH POSSIBILITIES OF
+	DAMAGE.
+
+
+	That install applies to Desert Dream, 1993 Kefrens (2 disks).
+
+
+	That install requires WHDLoad (at least version 1.1) and DIC to be in
+	the path.  Both can be found in the WHDLoad package.  To install from
+	a different drive than DF0:  select Expert as installation mode.
+
+
+	You need 1.0 MB ChipMem and 0.5 MB OtherMem.
+	You  can  quit  the  game  by  pressing  F10 (key can be changed with
+	Tooltype "QuitKey=").
+
+
+	What you get:
+	- Track loaders patched,
+	- Illegal memory accesses before 5 balls effect fixed,
+	- Support for hidden part, hold left mouse button to boot from second
+	  disk, then after screen flash do the magic =)
+
+	Bugs:
+	- Crap on the "Insert Disk 2" picture (probably WHDLoad problem),
+	- Some snooping problems...
+
+
+	Thanks  must  go Mr Larmer/Wanted Team for support and of course Bert
+	Jahn for great WHDLoad.
+
+
+	If  you  have  problems with this installation please report them via
+	the Bug-Report-Form which can be accessed on
+	http://www.fh-zwickau.de/~jah/whdload/
+
+	or via mail to:
+	bw@idc.com.pl
+
+
+	for full WHDLoad package and other installs refer to:
+		http://www.fh-zwickau.de/~jah/whdload/
+	or	aminet:dev/misc/whdload#?
+	and	aminet:game/patch/
+
+
+	BlackWine.

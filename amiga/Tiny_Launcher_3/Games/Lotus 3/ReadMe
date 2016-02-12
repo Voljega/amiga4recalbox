@@ -1,0 +1,40 @@
+Short : HD-Installer for Lotus 3: The Ultimate Challenge V1.3 release 3
+Type : game/patch
+Author : Bored Seal (bored@whdload.de)
+
+This patch applies to "Lotus 3" by Gremlin (c) 1992 - 2 disks.
+Slave requires WHDLOAD V10+, install requires RawDIC.
+Game requires 1.0 MB Chip Mem (+ 2.0 other memory for preload option)
+
+SUPPORTED VERSIONS:
+- original release (supported by Helmut Motzkau)
+- Lotus 3 Eine Exklusive Sammlung (supported by Heiko Scharbert)
+- Lotus Trilogy compilation (supported by Arif Pervez)
+
+FEATURES:
+- Full loading from HD
+- 3 versions supported
+- Copy protection removed
+- Manual protection removed
+- Blitter waits inserted
+- Access faults fixed
+- SQ/SF decrunchers relocated to Fast RAM
+- NI/ROM icon (created by JHZ)
+- Quit option (your default key)
+
+HISTORY:
+V1.0 (30-Nov-2000) - first public release
+V1.1 (28-Apr-2001)
+   - another version added (thanks Heiko), access fault fix improved
+V1.2 (23-Feb-2002)
+   - access fault in storm track fixed (thanks to Hexaae for bug reports!)
+   - SQ/SF decruncher => Fast RAM
+V1.3 * release 1 (10-Mar-2002)
+     - another version added (thanks Arif)
+     * release 2 (02-Apr-2002)
+     - slave bug fixed (original release didn't worked), (thanks to James for report)
+     * release 3 (20-Apr-2002)
+     - slave bugs fixed again (thanks to Captain HIT and MadMatt for report)
+
+         Bug report form, full WHDLoad package and other installs:
+                           http://www.whdload.de

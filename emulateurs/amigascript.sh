@@ -39,7 +39,7 @@ if [ "$gameName" == "TinyLauncher" ];
 then
 	cd $uae4armPath
 	echo "execute TinyLauncher : $uae4armPath/uae4arm on $romFolder/$uaeName"
-	./uae4arm
+	./uae4arm -f "$romFolder/$uaeName"
 	exit
 fi
 

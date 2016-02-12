@@ -1,0 +1,72 @@
+Short: HD Installer for Zool *6 versions*
+Type: game/patch
+Author: JOTD/Codetapper
+Uploader: JOTD
+
+Install-Script & HD-loader © 1996-2008 JOTD
+RawDIC Disk Imager © 2000 Codetapper
+
+Zool is © 1991-1993 Gremlins Software.
+
+This installer requires the Zool ORIGINAL disks (there are 2).
+It will not work for cracked versions.
+
+FEATURES:
+
+- Full load from HD/RAM
+- Convenient installer script letting you choose between the versions
+- Nice RawDIC imager by Codetapper (he made a slave for one version of the
+  game but I convinced him to let me release my megapack for this game :))
+- CD³², 3 ECS, 1 AGA and 1 dostrack Amigafun coverdisk versions supported.
+- Less memory demanding. Runs on 512K chipmem amigas (with at least 2MB of fastmem)
+- Music fixed to work with caches
+- Hiscores saved to hard disk
+- Docfile included
+
+SPECIFIC FEATURES
+
+ECS original version:
+
+Three versions are now supported: the original release, golden awards release,
+and another release thanks to both users who reported there existed other versions
+and sent me their disk 1.
+Codewheel protection is removed for the protected version.
+
+
+AGA original version:
+
+Sprite problems for the main character. One version (the only one?) supported
+Codewheel protection is removed.
+
+ECS Amigafun coverdisk:
+
+Same as ECS original version, except that it's a release of AmigaFun and thus
+the disks are standard DOS format
+
+CD³² version:
+
+Buggy country check removed (can be run in PAL or NTSC and on UAE now :))
+Reworked controls so 2 button joysticks can be used
+
+Controls:
+
+- Set CUSTOM4=1 to enable CD³² joypad controls:
+  * Play/Pause: pause/resume/options
+  * Blue button acts like green button (so 2 button joysticks can be used too)
+
+- Set CUSTOM4=0 to enable original 1-button floppy version controls
+  In the title screen, the program asks for 3¹/² button (green). Just press fire.
+
+Thanks to Psygore for improving OSEmu for real joypad support.
+
+
+CHEAT MODE
+
+The (original) cheat mode can be activated by typing 'GOLDFISH' in the main menu
+(not in CD32 version)
+During the game, press:
+
+1 for invincibility (temporary)
+2 for levelskip
+3 for worldskip
+4 for suicide
