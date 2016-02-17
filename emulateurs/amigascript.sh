@@ -103,7 +103,7 @@ mv Startup-Sequence $mountPoint/S
 #------------ execute uae4arm ------------
 cd $uae4armPath
 echo "execute $uae4armPath/uae4arm on $mountPoint/$uaeName"
-/recalbox/scripts/runcommand.sh 4 "$uae4armPath/uae4arm -f $mountPoint/$uaeName"
+./uae4arm -f "$mountPoint/$uaeName"
 
 cd $mountPoint
 #------------ clean Amiga OS Files before backup of backups ------------
