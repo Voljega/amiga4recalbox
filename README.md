@@ -3,7 +3,7 @@
 Compatible with ADF, WHD folders, and TinyLauncher
 Using ChiPs UAE4ARM v0.4 for RPI https://github.com/Chips-fr/uae4arm-rpi
 
-Installation :
+Installation
 --------------
 - copy /emulateurs to you root directory
 - give chmod 777 to every script files in /emulateurs
@@ -12,7 +12,7 @@ Installation :
 - copy /amiga contents to your /recalbox/share/roms/amiga and give 777 rights to TinyLauncher3 dir recursively
 - integration with EmulationStation coming soon (but it's pretty easy to do, just modify es_systems.cfg to add amiga conf)
 
-Usage :
+Usage
 -------
 - /emulateurs/amigascript.sh is the main script used for launching games in every format
 - /emulateurs/genUae.sh is used to generate uae files for your WHD folders
@@ -36,13 +36,13 @@ WHD games with TinyLauncher
 - copy the game folder to /recalbox/share/roms/amiga/TinyLauncher3/GAMES
 - launch TinyLauncher by using TinyLauncher.uae, click on ESC, then F1, let computation ends then ESC again, GAMES and select your game
  
-KNOWN BUGS :
+KNOWN BUGS
 ------------
 - Launching a SampleWHDGame.uae with no folder at the same level with name 'SampleWHDGame' will cause the emulator to crash and force you to reboot your recalbox
 - WHD games using several slaves can have intros shown after game itself
 - aspect ratio and image centering : you'll have to modify your uaes manually for the moment, for parameters force_aspectratio use true if you're in widescreen (16/9) or false in 4/3, next two parameters for centering should be put to simple
 
-COMING SOON :
+COMING SOON
 -------------
 - HD format games integration
 - bugs correction
