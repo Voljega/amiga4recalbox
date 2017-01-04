@@ -6,10 +6,10 @@ Using ChiPs UAE4ARM v0.4 for RPI https://github.com/Chips-fr/uae4arm-rpi
 
 Installation
 --------------
-- copy /emulateurs to you root directory
+- copy /emulateurs to /recalbox/share
 - give chmod 777 to every script files in /emulateurs
 - verify that /emulateurs/amiga/uae4arm/uae4arm has 777 rights
-- mkdir ram at root directory (this will be used by the script has a ram drive)
+- mkdir ram at /recalbox/share (this will be used by the script has a ram drive)
 - copy /amiga contents to your /recalbox/share/roms/amiga and give 777 rights to TinyLauncher3 dir recursively
 - integration with EmulationStation coming soon (but it's pretty easy to do, just modify es_systems.cfg to add amiga conf)
 
