@@ -11,7 +11,18 @@ Installation
 - verify that /emulateurs/amiga/uae4arm/uae4arm has 777 rights
 - mkdir ram at /recalbox/share (this will be used by the script has a ram drive)
 - copy /amiga contents to your /recalbox/share/roms/amiga and give 777 rights to TinyLauncher3 dir recursively
-- integration with EmulationStation coming soon (but it's pretty easy to do, just modify es_systems.cfg to add amiga conf)
+- integration with EmulationStation :
+   modify the es_systems.cfg file in /recalbox/share_init/.emulationstation and add the followign system :
+   <system>
+       <fullname>amiga1200</fullname>
+       <name>amiga1200</name>
+       <path>/recalbox/share/roms/amiga1200</path>
+       <extension>.adf .Adf .ADF .uae</extension>
+       <command>./recalbox/scripts/amigalauncher.sh %ROM%</command>
+       <platform>amiga1200</platform>
+       <theme>amiga1200</theme>
+   </system>
+   copy the amigalauncher.sh script into /recalbox/scripts and chmod 777 it
 
 Usage
 -------
@@ -45,7 +56,6 @@ KNOWN BUGS
 
 COMING SOON
 -------------
-- HD format games integration
 - bugs correction
 - custom uae packs for most well known games
 - unique key configuration for quitting game (if possible)
