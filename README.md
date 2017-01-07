@@ -6,6 +6,7 @@ Using ChiPs UAE4ARM v0.4 for RPI https://github.com/Chips-fr/uae4arm-rpi
 
 Installation
 --------------
+- copy the contents of /libs into /libs
 - copy /emulateurs to /recalbox/share
 - give chmod 777 to every script files in /emulateurs
 - verify that /emulateurs/amiga/uae4arm/uae4arm has 777 rights
