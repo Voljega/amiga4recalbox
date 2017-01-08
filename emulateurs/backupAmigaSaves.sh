@@ -1,4 +1,4 @@
-scriptPath="/emulateurs"
+scriptPath="/recalbox/share/emulateurs"
 mountPointDir=$1
 gameDir="$2"
 echo "backup_saves from $mountPointDir to $gameDir"
@@ -16,10 +16,10 @@ do
 		else
 			#echo "$fileMountPoint is found in $gameDir"			
 			cd $mountPointDir						
-			md5MountPointFile=`md5sum "$fileMountPoint" | awk '{print $1}'`
+			md5MountPointFile=`cksum "$fileMountPoint" | awk '{print $1}'`
 			#echo "MD5sum of $fileMountPoint in $mountPointDir : $md5MountPointFile"
 			cd "$gameDir"						
-			md5GameDirFile=`md5sum "$fileMountPoint" | awk '{print $1}'`
+			md5GameDirFile=`cksum "$fileMountPoint" | awk '{print $1}'`
 			#echo "MD5sum of $fileMountPoint in $gameDir : $md5GameDirFile"
 			if [ "$md5MountPointFile" == "$md5GameDirFile" ];
 			then

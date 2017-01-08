@@ -1,10 +1,10 @@
 #!/bin/bash
 #script constants
-mountPoint="/ram"
+mountPoint="/recalbox/share/ram"
 # GAME directory contains necessary files/dir C S and Devs except Startup-Sequence
-osFilespath="/emulateurs/GAME"
-uae4armPath="/emulateurs/amiga/uae4arm"
-scriptPath="/emulateurs"
+osFilespath="/recalbox/share/emulateurs/GAME"
+uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
+scriptPath="/recalbox/share/emulateurs"
 
 #------------ CHECK entry params ------------
 #protection against nonsense

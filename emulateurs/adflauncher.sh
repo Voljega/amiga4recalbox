@@ -1,6 +1,6 @@
 #!/bin/bash
-uae4armPath="/emulateurs/amiga/uae4arm"
-mountPoint="/ram"
+uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
+mountPoint="/recalbox/share/ram"
 
 #mounting 24M ram on $mountpoint  
 echo "Mounting 24M ram on $mountPoint for use of adf $1"
