@@ -3,9 +3,9 @@ mountPointDir=$1
 gameDir="$2"
 echo "backup_saves from $mountPointDir to $gameDir"
 cd $mountPointDir
-for fileMountPoint in `ls`
+for fileMountPoint in `ls -A`
 do
-	#echo "Treating $fileMountPoint in $mountPointDir"	
+	echo "Treating $fileMountPoint in $mountPointDir"	
 	if [ -d "$gameDir/$fileMountPoint" ]; then
 		#echo "$fileMountPoint is a directory, launch backup_saves from $mountPointDir/$fileMountPoint to $gameDir/$fileMountPoint"
 		$scriptPath/backupAmigaSaves.sh "$mountPointDir/$fileMountPoint" "$gameDir/$fileMountPoint"
