@@ -35,8 +35,8 @@ echo "chipset=aga" >> raw.uae
 echo "chipmem_size=4" >> raw.uae
 
 # On optimise la résolution du script.
-echo "gfx_width=768" >> raw.uae
-echo "gfx_height=270" >> raw.uae
+echo "gfx_width=640" >> raw.uae
+echo "gfx_height=256" >> raw.uae
 echo "gfx_correct_aspect=true" >> raw.uae
 echo "gfx_center_horizontal=simple" >> raw.uae
 echo "gfx_center_vertical=simple" >> raw.uae
