@@ -13,6 +13,7 @@ Installation
 - mkdir ram at /recalbox/share (this will be used by the script has a ram drive)
 - integration with EmulationStation : modify the es_systems.cfg file in /recalbox/share_init/.emulationstation (needs to change partition / to read and write) and add the following system :
    ```xml
+   
    <system>
        <fullname>amiga1200</fullname>
        <name>amiga1200</name>
