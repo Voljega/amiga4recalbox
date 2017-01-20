@@ -24,7 +24,7 @@ Installation
        <theme>amiga1200</theme>
    </system>
    ```
-  - copy the amigalauncher.sh script into /recalbox/scripts and chmod 777 it
+- copy the amigalauncher.sh script into /recalbox/scripts and chmod 777 it
 
 Usage
 -------
