@@ -16,6 +16,22 @@ cd $mountPoint/uae4arm/conf
 # On créer un fichier au démarrage du script pour configurer uae4arm
 touch raw.uae
 
+#Configuration des contrôles
+echo "config_version=2.8.1" >> raw.uae
+echo "pandora.joy_conf=0" >> raw.uae
+echo "pandora.joy_port=2" >> raw.uae
+echo "pandora.custom_dpad=1" >> raw.uae
+echo "pandora.button1=2" >> raw.uae
+echo "pandora.button2=1" >> raw.uae
+echo "joyport0=mouse" >> raw.uae
+echo "joyport0autofire=none" >> raw.uae
+echo "joyport0mode=mouse" >> raw.uae
+echo "joyportname0=MOUSE0" >> raw.uae
+echo "joyport1=joy0" >> raw.uae
+echo "joyport1autofire=normal" >> raw.uae
+echo "joyport1mode=djoy" >> raw.uae
+echo "joyportname1=JOY1" >> raw.uae
+
 #On le complete avec l'autolauncher
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae
@@ -23,10 +39,10 @@ echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
 echo "floppy0=$1" >> raw.uae
 
 # On cherche si le jeu est sur plusieurs disquettes.
-echo "floppy1=${1//Disk1/Disk2}" >> raw.uae
-echo "floppy2=${1//Disk1/Disk3}" >> raw.uae
+echo "floppy1=${1//Disk 1/Disk 2}" >> raw.uae
+echo "floppy2=${1//Disk 1/Disk 3}" >> raw.uae
 echo "floppy2type=0" >> raw.uae
-echo "floppy3=${1//Disk1/Disk4}" >> raw.uae
+echo "floppy3=${1//Disk 1/Disk 4}" >> raw.uae
 echo "floppy3type=0" >> raw.uae
 echo "nr_floppies=4" >> raw.uae
 
@@ -54,9 +70,6 @@ echo "ROMType=1" >> adfdir.conf
 echo "ROMName=KS ROM v3.1 (A1200)" >> adfdir.conf
 echo "ROMPath=$mountPoint/uae4arm/kickstarts/kick31.rom" >> adfdir.conf
 echo "ROMType=1" >> adfdir.conf
-echo "MRUDiskList=2" >> adfdir.conf
-echo "Diskfile=/recalbox/share/roms/amiga/RickDangerousADF.adf" >> adfdir.conf
-echo "Diskfile=$mountPoint/uae4arm/State_Of_The_Art.adf" >> adfdir.conf
 
 # On place le fichier au bon endroit et on lance l'emulateur.
 cd $mountPoint/uae4arm/
