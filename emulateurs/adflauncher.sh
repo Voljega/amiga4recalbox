@@ -18,11 +18,6 @@ touch raw.uae
 
 #Configuration des contrôles
 echo "config_version=2.8.1" >> raw.uae
-echo "pandora.joy_conf=0" >> raw.uae
-echo "pandora.joy_port=2" >> raw.uae
-echo "pandora.custom_dpad=1" >> raw.uae
-echo "pandora.button1=2" >> raw.uae
-echo "pandora.button2=1" >> raw.uae
 echo "joyport0=mouse" >> raw.uae
 echo "joyport0autofire=none" >> raw.uae
 echo "joyport0mode=mouse" >> raw.uae
