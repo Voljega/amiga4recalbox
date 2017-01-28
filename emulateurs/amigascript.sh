@@ -50,7 +50,7 @@ then
 	fi
 	cd $uae4armPath
 	echo "execute ADF : $uae4armPath/uae4arm on $romFolder/$uaeName"
-	$scriptPath/adflauncher.sh "$1"
+	$scriptPath/adflauncher.sh "$1" "$romFolder" "$uaeName"
 	exit
 fi
 

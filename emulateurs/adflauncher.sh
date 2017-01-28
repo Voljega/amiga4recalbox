@@ -1,6 +1,9 @@
 #!/bin/bash
 uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
 mountPoint="/recalbox/share/ram"
+fullName="$1"
+romPath="$2"
+uaeName="$3"
 
 #mounting 24M ram on $mountpoint  
 echo "Mounting 24M ram on $mountPoint for use of adf $1"
@@ -18,6 +21,11 @@ touch raw.uae
 
 #Configuration des contrôles
 echo "config_version=2.8.1" >> raw.uae
+#echo "pandora.joy_conf=0" >> raw.uae
+#echo "pandora.joy_port=0" >> raw.uae
+#echo "pandora.custom_dpad=1" >> raw.uae
+#echo "pandora.button1=2" >> raw.uae
+#echo "pandora.button2=1" >> raw.uae
 echo "joyport0=mouse" >> raw.uae
 echo "joyport0autofire=none" >> raw.uae
 echo "joyport0mode=mouse" >> raw.uae
@@ -31,17 +39,42 @@ echo "joyportname1=JOY1" >> raw.uae
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae
 echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
-echo "floppy0=$1" >> raw.uae
 
-# On cherche si le jeu est sur plusieurs disquettes.
-echo "floppy1=${1//Disk 1/Disk 2}" >> raw.uae
-echo "floppy2=${1//Disk 1/Disk 3}" >> raw.uae
-echo "floppy2type=0" >> raw.uae
-echo "floppy3=${1//Disk 1/Disk 4}" >> raw.uae
-echo "floppy3type=0" >> raw.uae
-echo "nr_floppies=4" >> raw.uae
+#floppies management
+strindex() { 
+  x="${1%%$2*}"
+  [[ $x = $1 ]] && echo -1 || echo ${#x}
+}
 
-# On modifie optimise si c'est un jeu en AGA
+index=`strindex "$uaeName" "Disk 1"`
+echo "Disk 1 $index"
+nbDisks="0"
+if [ "$index" == "-1" ]; then
+	# Mono disk
+	echo "floppy0=$1" >> raw.uae
+	echo "Added $1 as floppy0"
+	let "nbDisks = nbDisks + 1"
+	echo "nr_floppies=1" >> raw.uae
+	echo "number of floppies 1"
+else
+	# Several disks
+	let "index = index + 4"
+	prefix=`expr substr "$uaeName" 1 "$index"`
+	echo "prefix $prefix"
+	find "$romPath" -name "$prefix*" | sort | while read i
+	do
+		echo "floppy$nbDisks=$i" >> raw.uae
+		echo "floppy${nbDisks}type=0" >> raw.uae
+		echo "Added $i as floppy$nbDisks"
+		let "nbDisks = nbDisks + 1"
+		let counter++
+	done
+	nbFloppies=( $(find "$romPath" -name "$prefix*" | wc -l) )
+	echo "nr_floppies=$nbFloppies" >> raw.uae
+	echo "number of floppies $nbFloppies"
+fi
+
+# On configure en AGA
 echo "chipset=aga" >> raw.uae
 echo "chipmem_size=4" >> raw.uae
 
@@ -74,3 +107,4 @@ mv $mountPoint/uae4arm/conf/raw.uae $mountPoint/uae4arm/conf/uaeconfig.uae
 
 # unmount with -l to avoid resource busy
 umount -l $mountPoint
+
