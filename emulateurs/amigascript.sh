@@ -18,15 +18,13 @@ fi
 #command params
 uaeName=`basename "$1"`
 romFolder=`dirname "$1"`
-le=`expr index "$uaeName" .`
-romType=`expr substr "$uaeName" "$le" 4`
-let "le = le - 1"
-gameName=`expr substr "$uaeName" 1 "$le"`
+romType="${uaeName##*.}"
+gameName="${uaeName%.*}"
 
 echo "Before test : $gameName of type $romType from $romFolder"
 
-if [ -z "$uaeName" ] || [ -z "$romFolder" ] || [ -z "$gameName" ]; then
-	echo "Please execute this script on full path to an uae or adf like /recalbox/share/roms/amiga/gamename.uae"
+if  [ -z "$uaeName" ] || [ -z "$romFolder" ] || [ -z "$gameName" ]; then
+	echo "Please execute this script on full path to an existing uae or adf like /recalbox/share/roms/amiga/gamename.uae"
 	echo "For uae file, the game folder should be named exactly alike"
 	echo "and be in the same folder : /recalbox/share/roms/amiga/gamename"
 	exit
@@ -44,8 +42,12 @@ then
 fi
 
 #------------ Launch ADF ------------
-if	[ "$romType" == ".adf" ]; 
+if	[ "$romType" == "adf" ]; 
 then
+	if [ ! -f "$romFolder/$uaeName" ]; then
+		echo "ADF file $romFolder/$uaeName doesn't exist"
+		exit
+	fi
 	cd $uae4armPath
 	echo "execute ADF : $uae4armPath/uae4arm on $romFolder/$uaeName"
 	$scriptPath/adflauncher.sh "$1"
@@ -53,6 +55,11 @@ then
 fi
 
 #------------ Launch WHD ------------
+if [ ! -d "$romFolder/$gameName" ]; then
+    echo "A WHD folder $romFolder/$gameName corresponding to your uae file $romFolder/$uaeName doesn't exist"
+	exit
+fi
+
 echo "execute WHDLoad on $romFolder/$uaeName"
 #mounting 24M ram on $mountpoint  
 echo "Mounting 24M ram on $mountPoint"
