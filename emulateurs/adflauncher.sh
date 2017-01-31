@@ -43,7 +43,7 @@ echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
 #floppies management
 strindex() { 
   x="${1%%$2*}"
-  [[ $x = $1 ]] && echo -1 || echo ${#x}
+  [[ "$x" = "$1" ]] && echo -1 || echo ${#x}
 }
 
 index=`strindex "$uaeName" "Disk 1"`
@@ -51,8 +51,9 @@ echo "Disk 1 $index"
 nbDisks="0"
 if [ "$index" == "-1" ]; then
 	# Mono disk
-	echo "floppy0=$1" >> raw.uae
+	echo "floppy0=${1}" >> raw.uae
 	echo "Added $1 as floppy0"
+	echo "floppy0type=0" >> raw.uae
 	let "nbDisks = nbDisks + 1"
 	echo "nr_floppies=1" >> raw.uae
 	echo "number of floppies 1"
@@ -63,7 +64,7 @@ else
 	echo "prefix $prefix"
 	find "$romPath" -name "$prefix*" | sort | while read i
 	do
-		echo "floppy$nbDisks=$i" >> raw.uae
+		echo "floppy$nbDisks=${i}" >> raw.uae
 		echo "floppy${nbDisks}type=0" >> raw.uae
 		echo "Added $i as floppy$nbDisks"
 		let "nbDisks = nbDisks + 1"
