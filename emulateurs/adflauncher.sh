@@ -35,10 +35,16 @@ echo "joyport1autofire=normal" >> raw.uae
 echo "joyport1mode=djoy" >> raw.uae
 echo "joyportname1=JOY1" >> raw.uae
 
-#On le complete avec l'autolauncher
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae
-echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
+echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick31.rom" >> raw.uae
+# On configure en AGA
+echo "chipset=aga" >> raw.uae
+echo "chipmem_size=4" >> raw.uae
+echo "cpu_speed=max" >> raw.uae
+echo "cpu_type=68040" >> raw.uae
+echo "cpu_model=68040" >> raw.uae
+echo "fpu_model=68040" >> raw.uae
 
 #floppies management
 strindex() { 
@@ -68,16 +74,21 @@ else
 		echo "floppy${nbDisks}type=0" >> raw.uae
 		echo "Added $i as floppy$nbDisks"
 		let "nbDisks = nbDisks + 1"
-		let counter++
+		if [ "$nbDisks" -eq "4" ]; then
+			break
+		fi
 	done
 	nbFloppies=( $(find "$romPath" -name "$prefix*" | wc -l) )
-	echo "nr_floppies=$nbFloppies" >> raw.uae
-	echo "number of floppies $nbFloppies"
+	if [ "$nbFloppies" -gt "4" ]; then
+		echo "nr_floppies=4" >> raw.uae
+		echo "number of floppies 4"
+	else
+		
+		echo "nr_floppies=$nbFloppies" >> raw.uae
+		echo "number of floppies $nbFloppies"
+	fi
+	
 fi
-
-# On configure en AGA
-echo "chipset=aga" >> raw.uae
-echo "chipmem_size=4" >> raw.uae
 
 # On optimise la résolution du script.
 echo "gfx_width=640" >> raw.uae
@@ -86,7 +97,7 @@ echo "gfx_correct_aspect=true" >> raw.uae
 echo "gfx_center_horizontal=simple" >> raw.uae
 echo "gfx_center_vertical=simple" >> raw.uae
 
-#regenerate uaeconfig.uae
+#regenerate adfdir.conf
 rm $mountPoint/uae4arm/conf/adfdir.conf
 touch adfdir.conf
 echo "path=$mountPoint/uae4arm/adf/" >> adfdir.conf
