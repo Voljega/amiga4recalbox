@@ -39,7 +39,7 @@ Usage
 
 ADF games
 ---------
-Just copy them to your amiga roms folder, if the game uses several ADF, make sure that the different adfs have the same name except for the number at the end, you have to rename it if the last character isn't the number of the disk (ie if your name is ADF (Disk 1 of 2).adf rename it to ADF Disk1, spaces are usable)
+Just copy them to your amiga roms folder. Multi disks are automically loaded up to 4 for games using the standard naming "(Disk 1 of X)".
 
 WHD games in direct mode
 ------------------------
