@@ -5,6 +5,7 @@ mountPoint="/recalbox/share/ram"
 osFilespath="/recalbox/share/emulateurs/GAME"
 uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
 scriptPath="/recalbox/share/emulateurs"
+amigaHardware="$2"
 
 #------------ CHECK entry params ------------
 #protection against nonsense
@@ -13,6 +14,13 @@ if [ -z "$1" ] || [ -d "$1" ]; then
 	echo "For uae file, the game folder should be named exactly alike"
 	echo "and be in the same folder : /recalbox/share/roms/amiga/gamename"
 	exit
+fi
+
+#
+if [ "$amigaHardware" == "1200" ]; then
+	echo "Amiga Hardware 1200"
+else
+	echo "Amiga Hardware 600"
 fi
 
 #command params
@@ -50,7 +58,7 @@ then
 	fi
 	cd $uae4armPath
 	echo "execute ADF : $uae4armPath/uae4arm on $romFolder/$uaeName"
-	$scriptPath/adflauncher.sh "$1" "$romFolder" "$uaeName"
+	$scriptPath/adflauncher.sh "$1" "$romFolder" "$uaeName" "$amigaHardware"
 	exit
 fi
 

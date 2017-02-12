@@ -48,11 +48,11 @@ WHD games in direct mode
 
 KNOWN BUGS
 ------------
-- Launching a SampleWHDGame.uae with no folder at the same level with name 'SampleWHDGame' will cause the emulator to crash and force you to reboot your recalbox
 - WHD games using several slaves can have intros shown after game itself
 - aspect ratio and image centering : you'll have to modify your uaes manually for the moment, for parameters force_aspectratio use true if you're in widescreen (16/9) or false in 4/3, next two parameters for centering should be put to simple
 - only one joystick supported at the moment
 - CD32 isos not usable for the time beeing
+- joystick may not be detected correctly, go into input menu to correct that
 
 COMING SOON
 -------------

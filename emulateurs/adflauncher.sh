@@ -4,6 +4,7 @@ mountPoint="/recalbox/share/ram"
 fullName="$1"
 romPath="$2"
 uaeName="$3"
+amigaHardware="$4"
 
 #mounting 24M ram on $mountpoint  
 echo "Mounting 24M ram on $mountPoint for use of adf $1"
@@ -37,14 +38,22 @@ echo "joyportname1=JOY1" >> raw.uae
 
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae
-echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick31.rom" >> raw.uae
-# On configure en AGA
-echo "chipset=aga" >> raw.uae
-echo "chipmem_size=4" >> raw.uae
-echo "cpu_speed=max" >> raw.uae
-echo "cpu_type=68040" >> raw.uae
-echo "cpu_model=68040" >> raw.uae
-echo "fpu_model=68040" >> raw.uae
+
+if [ "$amigaHardware" == "1200" ]; then
+	echo "Amiga Hardware 1200 AGA"
+	echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick31.rom" >> raw.uae
+	# On configure en AGA
+	echo "chipset=aga" >> raw.uae
+	echo "chipmem_size=4" >> raw.uae
+	echo "cpu_speed=max" >> raw.uae
+	echo "cpu_type=68040" >> raw.uae
+	echo "cpu_model=68040" >> raw.uae
+	echo "fpu_model=68040" >> raw.uae
+else
+	echo "Amiga Hardware 600"
+	echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
+fi
+
 
 #floppies management
 strindex() { 
