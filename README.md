@@ -15,19 +15,29 @@ Installation
    ```xml
    
    <system>
-       <fullname>amiga1200</fullname>
-       <name>amiga1200</name>
-       <path>/recalbox/share/roms/amiga1200</path>
-       <extension>.adf .Adf .ADF .uae</extension>
-       <command>./recalbox/scripts/amigalauncher.sh %ROM%</command>
-       <platform>amiga1200</platform>
-       <theme>amiga1200</theme>
-   </system>
+        <fullname>amiga600</fullname>
+        <name>amiga600</name>
+        <path>/recalbox/share/roms/amiga600</path>
+        <extension>.adf .Adf .ADF .uae</extension>
+		<command>./recalbox/scripts/amigalauncher.sh %ROM% 600</command>	
+		<platform>amiga600</platform>
+        <theme>amiga600</theme>
+    </system>
+	<system>
+        <fullname>amiga1200</fullname>
+        <name>amiga1200</name>
+        <path>/recalbox/share/roms/amiga1200</path>
+        <extension>.adf .Adf .ADF .uae</extension>
+		<command>./recalbox/scripts/amigalauncher.sh %ROM% 1200</command>	
+		<platform>amiga1200</platform>
+        <theme>amiga1200</theme>
+    </system>
    ```
 - copy the amigalauncher.sh script into /recalbox/scripts and chmod 777 it
 
 Usage
 -------
+- Use the 600 system for well for amiga 600 and the 1200 for amiga 1200, ADF are very touchy regarding that, for WHD only 1200 launch for now, even if placed in 600 system
 - /emulateurs/amigascript.sh is the main script used for launching games in every format
 - /emulateurs/genUae.sh is used to generate uae files for your WHD folders
 - DO NOT USE MANUALLY THE OTHERS SCRIPTS, there are for internal usage by amigascript.sh only
