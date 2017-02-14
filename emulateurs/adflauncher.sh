@@ -10,17 +10,17 @@ amigaHardware="$4"
 echo "Mounting 24M ram on $mountPoint for use of adf $1"
 mount -t tmpfs -o size=24M tmpfs $mountPoint
 
-#copy Amiga OS Files
+# ----- Create & copy emulator structure -----
 echo "Copy uae4arm files to $mountPoint"
 mkdir $mountPoint/uae4arm
 cp -R $uae4armPath/* $mountPoint/uae4arm
 cd $mountPoint/uae4arm/conf
 
-# ----- CREATE adfdir.conf -----
+# ----- Create uae configuration file -----
 # On créer un fichier au démarrage du script pour configurer uae4arm
 touch raw.uae
 
-#Configuration des contrôles
+# ----- Controllers configuration ----- 
 echo "config_version=2.8.1" >> raw.uae
 #echo "pandora.joy_conf=0" >> raw.uae
 #echo "pandora.joy_port=0" >> raw.uae
@@ -35,10 +35,14 @@ echo "joyport1=joy0" >> raw.uae
 echo "joyport1autofire=normal" >> raw.uae
 echo "joyport1mode=djoy" >> raw.uae
 echo "joyportname1=JOY1" >> raw.uae
+echo "input.autofire_speed=0" >> raw.uae
+echo "input.mouse_speed=100" >> raw.uae
 
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae
-
+# Show status leds (Status Line)
+echo "show_leds=true" >> raw.uae
+# ----- Hardware configuration -----
 if [ "$amigaHardware" == "1200" ]; then
 	echo "Amiga Hardware 1200 AGA"
 	echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick31.rom" >> raw.uae
@@ -49,13 +53,15 @@ if [ "$amigaHardware" == "1200" ]; then
 	echo "cpu_type=68040" >> raw.uae
 	echo "cpu_model=68040" >> raw.uae
 	echo "fpu_model=68040" >> raw.uae
+	echo "fastmem_size=8" >> raw.uae
 else
 	echo "Amiga Hardware 600"
 	echo "kickstart_rom_file=$mountPoint/uae4arm/kickstarts/kick13.rom" >> raw.uae
+	echo "fastmem_size=8" >> raw.uae
 fi
 
 
-#floppies management
+# ----- Floppies management -----
 strindex() { 
   x="${1%%$2*}"
   [[ "$x" = "$1" ]] && echo -1 || echo ${#x}
@@ -87,6 +93,7 @@ else
 			break
 		fi
 	done
+	# Limit number of floppies to 4
 	nbFloppies=( $(find "$romPath" -name "$prefix*" | wc -l) )
 	if [ "$nbFloppies" -gt "4" ]; then
 		echo "nr_floppies=4" >> raw.uae
@@ -99,14 +106,14 @@ else
 	
 fi
 
-# On optimise la résolution du script.
+# ----- GFX configuration -----
 echo "gfx_width=640" >> raw.uae
 echo "gfx_height=256" >> raw.uae
 echo "gfx_correct_aspect=true" >> raw.uae
 echo "gfx_center_horizontal=simple" >> raw.uae
 echo "gfx_center_vertical=simple" >> raw.uae
 
-#regenerate adfdir.conf
+# ----- Generate adfdir.conf -----
 rm $mountPoint/uae4arm/conf/adfdir.conf
 touch adfdir.conf
 echo "path=$mountPoint/uae4arm/adf/" >> adfdir.conf
@@ -120,7 +127,7 @@ echo "ROMName=KS ROM v3.1 (A1200)" >> adfdir.conf
 echo "ROMPath=$mountPoint/uae4arm/kickstarts/kick31.rom" >> adfdir.conf
 echo "ROMType=1" >> adfdir.conf
 
-# On place le fichier au bon endroit et on lance l'emulateur.
+# ----- Copy uae conf file and launch emulator -----
 cd $mountPoint/uae4arm/
 rm $mountPoint/uae4arm/conf/uaeconfig.uae
 mv $mountPoint/uae4arm/conf/raw.uae $mountPoint/uae4arm/conf/uaeconfig.uae

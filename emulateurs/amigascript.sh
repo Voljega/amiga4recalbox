@@ -30,7 +30,7 @@ romType="${uaeName##*.}"
 gameName="${uaeName%.*}"
 
 echo "Before test : $gameName of type $romType from $romFolder"
-
+#detect bad parameters
 if  [ -z "$uaeName" ] || [ -z "$romFolder" ] || [ -z "$gameName" ]; then
 	echo "Please execute this script on full path to an existing uae or adf like /recalbox/share/roms/amiga/gamename.uae"
 	echo "For uae file, the game folder should be named exactly alike"
