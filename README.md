@@ -37,9 +37,9 @@ Installation
 
 Usage
 -------
-- Use the 600 system for well for amiga 600 and the 1200 for amiga 1200, ADF are very touchy regarding that, for WHD only 1200 launch for now, even if placed in 600 system
+- Use the 600 system for well for amiga 600 and the 1200 for amiga 1200, ADF are very touchy regarding that
 - /emulateurs/amigascript.sh is the main script used for launching games in every format
-- /emulateurs/genUae.sh is used to generate uae files for your WHD folders
+- /emulateurs/genUae.sh is used to generate uae files for your WHD folders. Usage : /emulateurs/genUae.sh "/recalbox/share/roms/amiga600" 600 will generate uae conf file for whd folder on amiga 500, /emulateurs/genUae.sh "/recalbox/share/roms/amiga1200" 1200 will generate uae conf file for whd folder on amiga 1200
 - DO NOT USE MANUALLY THE OTHERS SCRIPTS, there are for internal usage by amigascript.sh only
 - emulator can be quit with either the key shown at the beginning or stroke ctrl and select 'Quit' / press Q (that's simply ctrl then Q)
 - keyboard and mouse are mandatory as many amiga games need custom key strokes to launch games
