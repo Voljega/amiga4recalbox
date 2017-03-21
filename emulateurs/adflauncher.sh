@@ -37,6 +37,8 @@ echo "joyport1mode=djoy" >> raw.uae
 echo "joyportname1=JOY1" >> raw.uae
 echo "input.autofire_speed=0" >> raw.uae
 echo "input.mouse_speed=100" >> raw.uae
+echo "button_for_menu=2" >> raw.uae
+echo "button_for_quit=3" >> raw.uae
 
 echo "use_gui=no" >> raw.uae
 echo "use_debugger=false" >> raw.uae

@@ -19,6 +19,8 @@ joyport1mode=djoy
 joyportname1=JOY1
 input.mouse_speed=100
 input.autofire_speed=0
+button_for_menu=2
+button_for_quit=3
 ; common
 use_gui=no
 use_debugger=false
