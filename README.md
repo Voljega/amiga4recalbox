@@ -40,7 +40,7 @@ Usage
 -------
 - Use the 600 system for well for amiga 600 and the 1200 for amiga 1200, ADF are very touchy regarding that
 - /emulateurs/amigascript.sh is the main script used for launching games in every format
-- /emulateurs/genUae.sh is used to generate uae files for your WHD folders. Usage : /emulateurs/genUae.sh "/recalbox/share/roms/amiga600" 600 will generate uae conf file for whd folder on amiga 500, /emulateurs/genUae.sh "/recalbox/share/roms/amiga1200" 1200 will generate uae conf file for whd folder on amiga 1200
+- /emulateurs/genUae.sh is used to generate uae files for your WHD folders. See WHD games paragraph for usage
 - DO NOT USE MANUALLY THE OTHERS SCRIPTS, there are for internal usage by amigascript.sh only
 - keyboard and mouse are mandatory as many amiga games need custom key strokes to launch games
 - your keyboard will need to be configured as US in recalbox.conf for some games to launch if you use an azerty keyboard, quitting the emulator will be done through ctrl and a
@@ -56,8 +56,8 @@ WHD games
 ------------------------
 - unzip them, delete the .info file at the same level than the folder, copy to your roms folder or subfolder
 - you'll need a custom .uae file at the same level than the folder with the same name, generate one :
- genUAE.sh /recalbox/share/roms/amiga600 600 will generate an Amiga500 uae for every folder in the amiga600 roms folders, you can off course use subfolders), you can also simply copy and rename one of the sample whd uae file from recalbox/share/emulateurs
- genUAE.sh /recalbox/share/roms/amiga1200 1200 will generate an Amiga500 uae for every folder in the amiga600 roms folders
+- genUAE.sh /recalbox/share/roms/amiga600 600 will generate an Amiga500 uae for every folder in the amiga600 roms folders, you can off course use subfolders) or you can also simply copy and rename one of the sample whd uae file from recalbox/share/emulateurs
+ - genUAE.sh /recalbox/share/roms/amiga1200 1200 will generate an Amiga1200 uae for every folder in the amiga1200 roms folders
 
 KNOWN BUGS
 ------------
