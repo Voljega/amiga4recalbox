@@ -20,7 +20,7 @@ Installation
         <name>amiga600</name>
         <path>/recalbox/share/roms/amiga600</path>
         <extension>.adf .Adf .ADF .uae</extension>
-		<command>./recalbox/scripts/amigalauncher.sh %ROM% 600</command>	
+		<command>/recalbox/scripts/amigalauncher.sh %ROM% 600</command>	
 		<platform>amiga600</platform>
         <theme>amiga600</theme>
     </system>
@@ -29,7 +29,7 @@ Installation
         <name>amiga1200</name>
         <path>/recalbox/share/roms/amiga1200</path>
         <extension>.adf .Adf .ADF .uae</extension>
-		<command>./recalbox/scripts/amigalauncher.sh %ROM% 1200</command>	
+		<command>/recalbox/scripts/amigalauncher.sh %ROM% 1200</command>	
 		<platform>amiga1200</platform>
         <theme>amiga1200</theme>
     </system>
