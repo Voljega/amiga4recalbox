@@ -39,6 +39,8 @@ Installation
 - copy the `amigalauncher.sh` script into `/recalbox/scripts` and `chmod 755` it
 
 - then you'll need search the net for BIOS files for Amiga (also known as kickstart) and copy them after renoming them on your recalbox in two different directories :
+
+
 | MD5   | name in `/recalbox/share/emulateurs/amiga/uae4arm/kickstarts`   | name in `/recalbox/share/emulateurs/GAME/Devs/Kickstarts`   | comments   |
 | --- | --- | --- | --- |
 | 82a21c1890cae844b3df741f2762d48d    | kick13.rom      | kick33180.A500 kick33192.A500 kick34005.A500   |    | 
