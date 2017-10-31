@@ -40,6 +40,7 @@ Installation
 
 - then you'll need search the net for BIOS files for Amiga (also known as kickstart) and copy them after renoming them on your recalbox in two different directories :
 | MD5   | name in `/recalbox/share/emulateurs/amiga/uae4arm/kickstarts`   | name in `/recalbox/share/emulateurs/GAME/Devs/Kickstarts`   | comments   |
+| --- | --- | --- | --- |
 | 82a21c1890cae844b3df741f2762d48d    | kick13.rom      | kick33180.A500 kick33192.A500 kick34005.A500   |    | 
 | dc10d7bdd1b6f450773dfb558477c230    | kick20.rom      |    |    | 
 | 72ffce8541f100885da4b68a3bcf10f7    |                 | kick40063.A600   | optional   | 
