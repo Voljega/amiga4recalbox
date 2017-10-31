@@ -7,7 +7,7 @@ If you prefer to use Chips UAE4ARM just choose the right executable in /recalbox
 
 Installation
 --------------
-- copy the contents of `/libs` into `/lib`
+- copy the contents of `/lib` into `/lib`
 - copy `/emulateurs` to `/recalbox/share`
 - give `chmod 755` to every script files in `/recalbox/share/emulateurs`
 - verify that `/recalbox/share/emulateurs/amiga/uae4arm/uae4arm` has `755` rights
@@ -37,6 +37,15 @@ Installation
    ```
 
 - copy the `amigalauncher.sh` script into `/recalbox/scripts` and `chmod 755` it
+
+- then you'll need search the net for BIOS files for Amiga (also known as kickstart) and copy them after renoming them on your recalbox in two different directories :
+| MD5   | name in `/recalbox/share/emulateurs/amiga/uae4arm/kickstarts`   | name in `/recalbox/share/emulateurs/GAME/Devs/Kickstarts`   | comments   |
+| 82a21c1890cae844b3df741f2762d48d    | kick13.rom      | kick33180.A500 kick33192.A500 kick34005.A500   |    | 
+| dc10d7bdd1b6f450773dfb558477c230    | kick20.rom      |    |    | 
+| 72ffce8541f100885da4b68a3bcf10f7    |                 | kick40063.A600   | optional   | 
+| 646773759326fbac3b2311fd8c8793ee    | kick31.rom      | kick40068.A1200  |    | 
+| 88f6e141541c677f91b50893933a4eff    |                 | kick40068.A4000  | optional   | 
+
 
 Usage
 -------
