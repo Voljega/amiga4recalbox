@@ -85,7 +85,7 @@ else
 	let "index = index + 4"
 	prefix=`expr substr "$uaeName" 1 "$index"`
 	echo "prefix $prefix"
-	find "$romPath" -name "$prefix*" | sort | while read i
+    find "$romPath" -maxdepth 0 -name "$prefix*" | sort | while read i
 	do
 		echo "floppy$nbDisks=${i}" >> raw.uae
 		echo "floppy${nbDisks}type=0" >> raw.uae
