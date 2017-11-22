@@ -10,6 +10,7 @@ Installation and update from previous versions
 
 - Just copy the installAmiga folder into `/recalbox/share`
 - Then connect in SSH (through Putty or your prefered tool) and go to the folder `cd /recalbox/share/installAmiga`
+- Give 755 rights to the script : `chmod 755 installAmiga.sh`
 - Launch the script with `./installAmiga.sh`, press Enter when needed and choose your Pi version when prompted
 - Any modification to recalbox files or folders is backed-up so you can retrieve that if something goes wrong
 - After installation and reboot are completed, you can delete the installAmiga folder

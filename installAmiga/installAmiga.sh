@@ -13,7 +13,7 @@ echo "Copy /lib dir"
 #mv -f lib /
 rsync -a /recalbox/share/installAmiga/lib/ /lib/
 if [ ! -d "/recalbox/share/emulateurs/" ]; then
-    mkdir /recalbox/share/emulateurs/emulateurs
+    mkdir /recalbox/share/emulateurs
 fi
 if [ -d "/recalbox/share/emulateurs/amiga" ]; then
     if [ -d "/recalbox/share/emulateurs/.amigabak" ]; then
