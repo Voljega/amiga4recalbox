@@ -3,7 +3,8 @@ supportVersion="17.11.10.2"
 echo " "
 echo "This script is going to install or update amiga on your recalbox, which should be in version $supportVersion"
 echo "Please update your recalbox before or wait for an amiga4recalbox update if this is not the case"
-echo "REMEMBER THIS IS EXPERIMENTAL, ALWAYS HAVE A BACKUP OF YOUR ROMS, BIOS, CUSTOM CONG, ETC"
+echo "REMEMBER THIS IS EXPERIMENTAL, ALWAYS HAVE A BACKUP OF YOUR ROMS, BIOS, CUSTOM CONF, ETC"
+echo "Push Enter"
 read ok
 # ---- Passing in rw mode on partition /
 echo "Mount / in rw"
@@ -35,7 +36,6 @@ fi
 echo "Using Raspberry Pi $piVersion"
 mv -f "/recalbox/share/emulateurs/amiga/uae4arm/amiberry-rpi$piVersion" "/recalbox/share/emulateurs/amiga/uae4arm/uae4arm"
 echo "Customize /recalbox/share_init/system/.emulationstation/es_systems.cfg"
-# IMPROVE AND HANDLE EXISTING BAK
 mv -f /recalbox/share_init/system/.emulationstation/es_systems.cfg /recalbox/share_init/system/.emulationstation/es_systems.bak
 cp es_systems.cfg /recalbox/share_init/system/.emulationstation/es_systems.cfg
 echo "Modify configgen scripts"
@@ -59,6 +59,18 @@ if [ -d "/recalbox/share/bios/amiga/whdl" ]; then
 fi
 cp -R whdl /recalbox/share/bios/amiga
 chmod 755 -R /recalbox/share/bios/amiga/whdl
+if [ ! -d "/recalbox/share/roms/amiga600" ]; then
+    echo "Create /recalbox/share/roms/amiga600"
+    mkdir "/recalbox/share/roms/amiga600"
+fi
+if [ ! -d "/recalbox/share/roms/amiga1200" ]; then
+    echo "Create /recalbox/share/roms/amiga1200"
+    mkdir "/recalbox/share/roms/amiga1200"
+fi
+if [ ! -d "/recalbox/share/roms/amigacd32" ]; then
+    echo "Create /recalbox/share/roms/amigacd32"
+    mkdir "/recalbox/share/roms/amigacd32"
+fi
 cd /usr/lib/python2.7/site-packages/configgen/
 rm emulatorlauncher.pyc
 python -m compileall emulatorlauncher.py
