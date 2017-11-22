@@ -25,7 +25,7 @@ fi
 echo "Copy emulateurs to /recalbox/share/"
 rsync -a /recalbox/share/installAmiga/emulateurs/ /recalbox/share/emulateurs/
 chmod 755 -R /recalbox/share/emulateurs/amiga
-echo "Which Raspberry Pi are you using : 0,1,2 or 3 ?"
+echo "Which Raspberry Pi are you using : 1,2 or 3 ?"
 read piVersion
 if  [ ! "$piVersion" == "0" ] && [ ! "$piVersion" == "1" ] && [ ! "$piVersion" == "2" ] && [ ! "$piVersion" == "3" ];
 then

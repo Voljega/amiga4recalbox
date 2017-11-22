@@ -1,6 +1,6 @@
 # Custom Amiga Emulation for Recalbox
 
-For Raspberry Pi 0,1,2 and 3
+For Raspberry Pi 1,2 or 3
 Compatible with ADF and WHD games
 Using Midwan's amiberry 2.1 for RPI https://github.com/midwan/amiberry
 
@@ -12,6 +12,7 @@ Installation and update from previous versions
 - Then connect in SSH (through Putty or your prefered tool) and go to the folder `cd /recalbox/share/installAmiga`
 - Launch the script with `./installAmiga.sh`, press Enter when needed and choose your Pi version when prompted
 - Any modification to recalbox files or folders is backed-up so you can retrieve that if something goes wrong
+- After installation and reboot are completed, you can delete the installAmiga folder
 
 - To play, you'll then to need search the net for BIOS files for Amiga (also known as kickstarts) and copy them to the `/recalbox/share/bios` folder after renaming them.
 You may only need some of them if you don't want to use all systems
