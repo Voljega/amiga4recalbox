@@ -11,7 +11,6 @@ echo "Mount / in rw"
 mount -o remount,rw /
 # ---- Move lib folder
 echo "Copy /lib dir"
-#mv -f lib /
 rsync -a /recalbox/share/installAmiga/lib/ /lib/
 if [ ! -d "/recalbox/share/emulateurs/" ]; then
     mkdir /recalbox/share/emulateurs
@@ -23,6 +22,7 @@ if [ -d "/recalbox/share/emulateurs/amiga" ]; then
     echo "Backup existing /recalbox/share/emulateurs/amiga to /recalbox/share/emulateurs/.amigabak"
     mv -f /recalbox/share/emulateurs/amiga /recalbox/share/emulateurs/.amigabak
 fi
+# ---- Binary and genUAE directory
 echo "Copy emulateurs to /recalbox/share/"
 rsync -a /recalbox/share/installAmiga/emulateurs/ /recalbox/share/emulateurs/
 chmod 755 -R /recalbox/share/emulateurs/amiga
@@ -35,9 +35,11 @@ then
 fi
 echo "Using Raspberry Pi $piVersion"
 mv -f "/recalbox/share/emulateurs/amiga/uae4arm/amiberry-rpi$piVersion" "/recalbox/share/emulateurs/amiga/uae4arm/uae4arm"
+# ---- Es_systems_cfg in share_init
 echo "Customize /recalbox/share_init/system/.emulationstation/es_systems.cfg"
 mv -f /recalbox/share_init/system/.emulationstation/es_systems.cfg /recalbox/share_init/system/.emulationstation/es_systems.bak
 cp es_systems.cfg /recalbox/share_init/system/.emulationstation/es_systems.cfg
+# ---- Configgen tweaking
 echo "Modify configgen scripts"
 if [ -f "/usr/lib/python2.7/site-packages/configgen/emulatorlauncher.bak" ]; then
     rm -f /usr/lib/python2.7/site-packages/configgen/emulatorlauncher.bak
@@ -48,6 +50,7 @@ if [ -f "/usr/lib/python2.7/site-packages/configgen/recalboxFiles.bak" ]; then
 fi
 mv -f /usr/lib/python2.7/site-packages/configgen/recalboxFiles.py /usr/lib/python2.7/site-packages/configgen/recalboxFiles.bak
 rsync -a /recalbox/share/installAmiga/configgen/ /usr/lib/python2.7/site-packages/configgen/
+# ---- Generates bios and roms folders
 echo "Create WHDL conf in /recalbox/share/bios/amiga"
 if [ ! -d "/recalbox/share/bios/amiga" ]; then
     echo "Create /recalbox/share/bios/amiga"
@@ -71,6 +74,7 @@ if [ ! -d "/recalbox/share/roms/amigacd32" ]; then
     echo "Create /recalbox/share/roms/amigacd32"
     mkdir "/recalbox/share/roms/amigacd32"
 fi
+# ---- Recompile emulatorlauncher.py
 cd /usr/lib/python2.7/site-packages/configgen/
 rm emulatorlauncher.pyc
 python -m compileall emulatorlauncher.py
