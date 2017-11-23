@@ -2,10 +2,14 @@
 supportVersion="17.11.10.2"
 echo " "
 echo "This script is going to install or update amiga on your recalbox, which should be in version $supportVersion"
-echo "Please update your recalbox before or wait for an amiga4recalbox update if this is not the case"
+echo "Please update your recalbox before using this script or wait for a new amiga4recalbox update if this is not the case"
 echo "REMEMBER THIS IS EXPERIMENTAL, ALWAYS HAVE A BACKUP OF YOUR ROMS, BIOS, CUSTOM CONF, ETC"
-echo "Push Enter"
+echo "Press x to exit script and stop installation or any other key to continue"
 read ok
+if [ "$ok" == "x" ] || [ "$ok" == "X" ]; then
+    echo "Installation cancelled by user"
+    exit
+fi
 # ---- Passing in rw mode on partition /
 echo "Mount / in rw"
 mount -o remount,rw /
@@ -56,7 +60,10 @@ if [ ! -d "/recalbox/share/bios/amiga" ]; then
     echo "Create /recalbox/share/bios/amiga"
     mkdir "/recalbox/share/bios/amiga"
 fi
-if [ -d "/recalbox/share/bios/amiga/whdl" ]; then    
+if [ -d "/recalbox/share/bios/amiga/whdl" ]; then
+    if [ -d "/recalbox/share/bios/amiga/.whdlbak" ]; then
+        rm -rf "/recalbox/share/bios/amiga/.whdlbak"        
+    fi
     echo "Backup existing /recalbox/share/bios/amiga/whdl to /recalbox/share/bios/amiga/.whdlbak"
     mv -f /recalbox/share/bios/amiga/whdl /recalbox/share/bios/amiga/.whdlbak
 fi
@@ -79,6 +86,7 @@ cd /usr/lib/python2.7/site-packages/configgen/
 rm emulatorlauncher.pyc
 python -m compileall emulatorlauncher.py
 echo "Installation completed, your recalbox is now going to reboot"
+echo "Press any key"
 read reb
 reboot
 
