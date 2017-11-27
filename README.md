@@ -27,6 +27,8 @@ You may only need some of them if you don't want to use all systems
 | bb72565701b1b6faece07d68ea5da639    | CD32ext.rom      | Amiga CD32   |
 | 31e5bd652a7b4f2a818cd7d11a43b8bf    | cd32.nvr      | Amiga CD32   |
 
+- This last file seems to be created by the emulator, just create a blank file of the same name and evrything should be ok.
+
 Usage
 -------
 - Use the 600 system for well for amiga 600 and the 1200 for amiga 1200, ADF are very touchy regarding that
