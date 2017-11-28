@@ -1,7 +1,9 @@
 # Custom Amiga Emulation for Recalbox
 
 For Raspberry Pi 1,2 or 3
+
 Compatible with ADF and WHD games
+
 Using Midwan's amiberry 2.1 for RPI https://github.com/midwan/amiberry
 
 
@@ -72,6 +74,21 @@ You can also automatically generate them for all whdl games of your roms folder 
 - `genUAE.sh /recalbox/share/roms/amiga1200 1200` will generate an Amiga1200 uae for every folder in the amiga1200 roms folders
 
 **Each custom configuration parts of your .uae file will only be used if it starts with the right block name : `;hardware`, `;controls` or `;graphics`**
+
+#### Startup-sequence tweaking (for experts only)
+Standard generated launch sequence for WHDL games is `WHDload game.slave Preload` (in `WHDL/S/Startup-Sequence`)
+
+But some few WHDL games (like History Line : 1914-1918 ) may require additionnal parameters on launch or they simply crash
+
+You can add a second file (totally optional) to your setup to use those parameters, so you will have if we take History Line as example :
+- HistoryLine (folder of the WHDL game)
+- HistoryLine.uae (which can be empty or customized)
+- HistoryLine.whdl (optional, containing additional parameters here `CUSTOM1=1`)
+
+The game will then launch.
+
+
+
 
 KNOWN BUGS
 ------------

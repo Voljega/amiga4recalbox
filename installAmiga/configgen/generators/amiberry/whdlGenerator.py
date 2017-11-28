@@ -68,6 +68,11 @@ def generateWHDL(fullName,romFolder,gameName,amigaHardware,controller) :
     generateHardDriveConf(fUaeConfig)
     
     # ------------ Create StartupSequence with right slave files ------------
+    
+    #
+    customLaunch = os.path.join(romFolder,gameName+".whdl")
+    gotAddedParams = os.path.exists(customLaunch) and not os.path.getsize(customLaunch) == 0
+    
     fStartupSeq = open(os.path.join(mountPointWHDL,"S","Startup-Sequence"),"a+")
     try :
         slaveFiles = [filename for filename in os.listdir(mountPointWHDL) if filename.endswith(".Slave") or filename.endswith(".slave")]
@@ -76,9 +81,14 @@ def generateWHDL(fullName,romFolder,gameName,amigaHardware,controller) :
             sys.exit("This is not a valid WHD game")
         
         for slaveFile in slaveFiles :
-            print("Using slave file %s" %slaveFile)
-            fStartupSeq.write("WHDload "+slaveFile+" Preload\n")
-            
+            if gotAddedParams :
+                addedParams = open(customLaunch,"r").readlines()[0].rstrip('\n\r ')
+                print("Using slave file %s with custom params %s" %(slaveFile,addedParams))
+                fStartupSeq.write("WHDload "+slaveFile+" Preload "+addedParams+"\n")
+            else :
+                print("Using slave file %s" %slaveFile)
+                fStartupSeq.write("WHDload "+slaveFile+" Preload\n")
+                
         fStartupSeq.write("exitemu\n")
     finally :
         fStartupSeq.close()
