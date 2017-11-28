@@ -62,7 +62,8 @@ def generateWHDL(fullName,romFolder,gameName,amigaHardware,controller) :
         amiberryConfig.generateHardwareConf(fUaeConfig,amigaHardware)
     # Add Z3 Mem to load whole game in memory
     amiberryConfig.generateZ3Mem(fUaeConfig)
-    amiberryConfig.generateGraphicConf(fUaeConfig)
+    if uaeConfigIsEmpty or not ';graphics' in open(uaeConfig).read() :
+        amiberryConfig.generateGraphicConf(fUaeConfig)
     amiberryConfig.generateSoundConf(fUaeConfig)
     generateHardDriveConf(fUaeConfig)
     

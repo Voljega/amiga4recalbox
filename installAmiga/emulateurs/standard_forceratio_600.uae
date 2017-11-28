@@ -1,2 +1,22 @@
 ;hardware
 fastmem_size=8
+;controls
+config_version=2.8.1
+joyport0=mouse
+joyport0autofire=none
+joyport0mode=mouse
+joyportname0=MOUSE0
+joyport1=joy0
+joyport1autofire=normal
+joyport1mode=djoy
+joyportname1=JOY1
+input.autofire_speed=0
+input.mouse_speed=100
+button_for_menu=2
+button_for_quit=3
+;graphics
+gfx_width=640
+gfx_height=256
+gfx_correct_aspect=true
+gfx_center_horizontal = simple
+gfx_center_vertical = simple

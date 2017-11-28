@@ -43,19 +43,35 @@ Just copy them to your amiga roms folder. Multi disks are automically loaded up 
 
 WHD games
 ------------------------
-- Unzip them, delete the `.info` file at the same level than the folder, and copy only the folder to your roms folder (you can use subfolders i.e. `/recalbox/share/roms/amiga1200/ShootEmUp)`
-- You'll need a custom `.uae` file at the same level than the folder with the same name, two solutions :
-- Copy the right one manually from `/recalbox/share/emulateurs` and rename it like your whdl game folder (keep the `.uae` extension)
-- or generate then with :
-- `genUAE.sh /recalbox/share/roms/amiga600 600` will generate an Amiga500 uae for every folder in the amiga600 roms folders
-- `genUAE.sh /recalbox/share/roms/amiga1200 1200` will generate an Amiga1200 uae for every folder in the amiga1200 roms folders
-- By default I recommend using amiga1200 folder for any WHDL game, if some of them are too fast, you can try in amiga600 folder
+##### Installation :
+
+Unzip them, delete the `.info` file at the same level than the folder, and copy only the folder to your roms folder (you can use subfolders i.e. `/recalbox/share/roms/amiga1200/ShootEmUp)`
+
+##### Usage :
+You'll need an `.uae` file at the same level than the folder with the same name, two solutions :
+- Create an empty one with same name as the folder
+- Or use a custom one wich will allow you to tweak configuration of the emulator (see next paragraph)
+
+**By default I recommend using amiga1200 folder for any WHDL game, if some of them are too fast, you can try them in amiga600 folder**
 
 WHD games tweaking
 ------------------
-- In the uae file, you can modify the `;hardware` and `;controls` section to override the standard configuration of the emulator
-- This can allow you to play with two joysticks for instance, or use very specific hardware confuguration for some games that demands a little tweaking
-- You can also erase eveything in the uae file and default emulator configuration will be used
+#### .uae file tweaking
+In the uae file, you can define `;hardware`, `;controls` and `;graphics` blocks to replace the standard configuration of the emulator
+
+This can allow you to play with two joysticks for instance, use very specific hardware configuration for some games that are a little special, or define a custom resolution
+
+You can also erase eveything in the uae file and default emulator configuration will be used
+
+Examples of custom uae files (using default configuration which you can change and tweak like you want) can be found in `/recalbox/share/emulateurs` :
+ 
+Copy the one (corresponding to the amiga model you wan to use) next to your whdl game folder and rename it like your whdl game folder (keep the `.uae` extension)
+
+You can also automatically generate them for all whdl games of your roms folder (up to one level of subfolders):
+- `genUAE.sh /recalbox/share/roms/amiga600 600` will generate an Amiga500 uae for every folder in the amiga600 roms folders
+- `genUAE.sh /recalbox/share/roms/amiga1200 1200` will generate an Amiga1200 uae for every folder in the amiga1200 roms folders
+
+**Each custom configuration parts of your .uae file will only be used if it starts with the right block name : `;hardware`, `;controls` or `;graphics`**
 
 KNOWN BUGS
 ------------

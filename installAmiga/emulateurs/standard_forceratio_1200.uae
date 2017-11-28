@@ -20,3 +20,9 @@ input.autofire_speed=0
 input.mouse_speed=100
 button_for_menu=2
 button_for_quit=3
+;graphics
+gfx_width=640
+gfx_height=256
+gfx_correct_aspect=true
+gfx_center_horizontal = simple
+gfx_center_vertical = simple
