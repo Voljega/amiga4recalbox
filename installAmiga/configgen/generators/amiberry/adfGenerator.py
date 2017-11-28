@@ -47,7 +47,7 @@ def floppiesManagement(fUaeConfig,romPath,uaeName) :
     else :
         # Several disks
         prefix = uaeName[0:indexDisk+4]
-        prefixed = [filename for filename in os.listdir(romPath) if filename.startswith(prefix)]
+        prefixed = sorted([filename for filename in os.listdir(romPath) if filename.startswith(prefix)])
         for i in range(0,min(4,len(prefixed))) :
             fUaeConfig.save("floppy"+`i`,os.path.join(romPath,prefixed[i]))
             print("Added %s as floppy%i" % (os.path.join(romPath,prefixed[i]),i))
