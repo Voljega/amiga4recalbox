@@ -29,7 +29,7 @@ You may only need some of them if you don't want to use all systems
 | bb72565701b1b6faece07d68ea5da639    | CD32ext.rom      | Amiga CD32   |
 | 31e5bd652a7b4f2a818cd7d11a43b8bf    | cd32.nvr      | Amiga CD32   |
 
-- This last file `cd32.nrv` seems to be created by the emulator, just create a blank file of the same name and evrything should be ok.
+- This last file `cd32.nrv` seems to be created by the emulator, just create a blank file of the same name and everything should be ok.
 
 Usage
 -------
@@ -58,7 +58,7 @@ You'll need an `.uae` file at the same level than the folder with the same name,
 
 WHD games tweaking
 ------------------
-#### .uae file tweaking
+### .uae file tweaking
 In the uae file, you can define `;hardware`, `;controls` and `;graphics` blocks to replace the standard configuration of the emulator
 
 This can allow you to play with two joysticks for instance, use very specific hardware configuration for some games that are a little special, or define a custom resolution
@@ -75,7 +75,7 @@ You can also automatically generate them for all whdl games of your roms folder 
 
 **Each custom configuration parts of your .uae file will only be used if it starts with the right block name : `;hardware`, `;controls` or `;graphics`**
 
-#### Startup-sequence tweaking (for experts only)
+### Startup-sequence tweaking (for experts only)
 Standard generated launch sequence for WHDL games is `WHDload game.slave Preload` (in `WHDL/S/Startup-Sequence`)
 
 But some few WHDL games (like History Line : 1914-1918 ) may require additionnal parameters on launch or they simply crash

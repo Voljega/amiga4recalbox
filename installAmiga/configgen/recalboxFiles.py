@@ -28,7 +28,7 @@ recalboxBins = {'dosbox'      : '/usr/bin/dosbox'
               , 'vice'        : '/usr/bin/x64'
               , 'dolphin'     : '/usr/bin/dolphin-emu-nogui'
               , 'advancemame' : '/usr/bin/advmame'
-              , 'amiberry'    : '/recalbox/share/emulateurs/uae4arm'
+              , 'amiberry'    : '/recalbox/share/emulateurs/amiberry'
 }
 
 

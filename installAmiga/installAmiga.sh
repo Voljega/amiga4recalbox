@@ -38,7 +38,7 @@ then
     read piVersion
 fi
 echo "Using Raspberry Pi $piVersion"
-mv -f "/recalbox/share/emulateurs/amiga/uae4arm/amiberry-rpi$piVersion" "/recalbox/share/emulateurs/amiga/uae4arm/uae4arm"
+mv -f "/recalbox/share/emulateurs/amiga/amiberry/amiberry-rpi$piVersion" "/recalbox/share/emulateurs/amiga/amiberry/amiberry"
 # ---- Es_systems_cfg in share_init
 echo "Customize /recalbox/share_init/system/.emulationstation/es_systems.cfg"
 mv -f /recalbox/share_init/system/.emulationstation/es_systems.cfg /recalbox/share_init/system/.emulationstation/es_systems.bak

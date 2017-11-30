@@ -9,7 +9,6 @@ import adfGenerator
 import whdlGenerator
 import cdGenerator
 
-uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
 mountPoint="/tmp/amiga"
 
 class AmiberryGenerator(Generator):
@@ -44,10 +43,10 @@ class AmiberryGenerator(Generator):
             
             adfGenerator.generateAdf(rom,romFolder,uaeName,system.name,controller)
             
-            # mandatory change of current working dir to uae4arm's one
-            os.chdir(os.path.join(mountPoint,"uae4arm"))
-            print("Executing %s in %s" % ("uae4arm",os.getcwd()))
-            os.popen("./uae4arm")
+            # mandatory change of current working dir to amiberry's one
+            os.chdir(os.path.join(mountPoint,"amiberry"))
+            print("Executing %s in %s" % ("amiberry",os.getcwd()))
+            os.popen("./amiberry")
             
         #------------ Launch WHD ------------
         elif romType == "uae" :
@@ -57,10 +56,10 @@ class AmiberryGenerator(Generator):
             
             whdlGenerator.generateWHDL(rom,romFolder,gameName,system.name,controller)
             
-            # mandatory change of current working dir to uae4arm's one
-            os.chdir(os.path.join(mountPoint,"uae4arm"))
-            print("Executing uae4arm -f %s in %s" %(os.path.join(mountPoint,"WHDL","uaeconfig.uae"),os.getcwd()))
-            os.popen('./uae4arm -f "'+os.path.join(mountPoint,"WHDL","uaeconfig.uae")+'"')
+            # mandatory change of current working dir to amiberry's one
+            os.chdir(os.path.join(mountPoint,"amiberry"))
+            print("Executing amiberry -f %s in %s" %(os.path.join(mountPoint,"WHDL","uaeconfig.uae"),os.getcwd()))
+            os.popen('./amiberry -f "'+os.path.join(mountPoint,"WHDL","uaeconfig.uae")+'"')
             
             whdlGenerator.handleBackup(rom,romFolder,gameName,system.name)
         
@@ -71,10 +70,10 @@ class AmiberryGenerator(Generator):
                 
             cdGenerator.generateCD(rom,romFolder,uaeName,system.name,controller)
             
-            # mandatory change of current working dir to uae4arm's one
-            os.chdir(os.path.join(mountPoint,"uae4arm"))
-            print("Executing uae4arm -f %s in %s" %(os.path.join(mountPoint,"uae4arm","conf","uaeconfig.uae"),os.getcwd()))
-            os.popen('./uae4arm -f "'+os.path.join(mountPoint,"uae4arm","conf","uaeconfig.uae")+'"')
+            # mandatory change of current working dir to amiberry's one
+            os.chdir(os.path.join(mountPoint,"amiberry"))
+            print("Executing amiberry -f %s in %s" %(os.path.join(mountPoint,"amiberry","conf","uaeconfig.uae"),os.getcwd()))
+            os.popen('./amiberry -f "'+os.path.join(mountPoint,"amiberry","conf","uaeconfig.uae")+'"')
             
             
         sys.exit()

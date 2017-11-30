@@ -10,7 +10,7 @@ import amiberryConfig
 import binascii
 from settings.unixSettings import UnixSettings
 
-uae4armPath="/recalbox/share/emulateurs/amiga/uae4arm"
+amiberryPath="/recalbox/share/emulateurs/amiga/amiberry"
 mountPoint="/tmp/amiga"
 mountPointWHDL="/tmp/amiga/WHDL"
 biosPath="/recalbox/share/bios/"
@@ -19,7 +19,7 @@ whdFilespath=biosPath+"amiga/whdl"
 def generateWHDL(fullName,romFolder,gameName,amigaHardware,controller) :
     print("execute WHDLoad : <%s>" % os.path.join(romFolder,gameName))
 
-    amiberryConfig.initMountpoint(mountPoint,uae4armPath)
+    amiberryConfig.initMountpoint(mountPoint,amiberryPath)
     os.makedirs(mountPointWHDL)
 
     # ------------ copy WHDL structure Files ------------

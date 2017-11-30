@@ -7,20 +7,20 @@ import shutil
 
 biosPath="/recalbox/share/bios/"
 
-def initMountpoint(mountPoint,uae4armPath) :
+def initMountpoint(mountPoint,amiberryPath) :
     # ----- cleaning mountpoint directory ----- 
     if os.path.exists(mountPoint) :
         shutil.rmtree(mountPoint)
     
     # ----- Create & copy emulator structure -----
-    print("Copy uae4arm files to %s" % mountPoint)
-    os.makedirs(mountPoint+"/uae4arm")
+    print("Copy amiberry files to %s" % mountPoint)
+    os.makedirs(mountPoint+"/amiberry")
     # TODO REDO IN PYTHON (not easily done)
-    os.popen("cp -R "+uae4armPath+"/* "+mountPoint+"/uae4arm")
+    os.popen("cp -R "+amiberryPath+"/* "+mountPoint+"/amiberry")
     
     # ----- Generate adfdir.conf -----
     # ----- Needed for right handling of bios even in whdl case -----
-    adfdir = os.path.join(mountPoint,"uae4arm","conf","adfdir.conf")
+    adfdir = os.path.join(mountPoint,"amiberry","conf","adfdir.conf")
     
     if os.path.exists(adfdir) :
         os.remove(adfdir)
@@ -36,8 +36,8 @@ def hasCD32Kickstarts() : return os.path.exists(os.path.join(biosPath,"CD32ext.r
 def generateAdfdirConf(fAdfdir,mountPoint) :
     
     
-    fAdfdir.write("path="+mountPoint+"/uae4arm/adf/\n")
-    fAdfdir.write("config_path="+mountPoint+"/uae4arm/conf/\n")
+    fAdfdir.write("path="+mountPoint+"/amiberry/adf/\n")
+    fAdfdir.write("config_path="+mountPoint+"/amiberry/conf/\n")
     fAdfdir.write("rom_path="+biosPath+"\n")
     if (hasCD32Kickstarts()) :
         fAdfdir.write("ROMs=6\n")
@@ -111,7 +111,7 @@ def generateHardwareConf (fUaeConfig,amigaHardware) :
         fUaeConfig.save("fastmem_size","8")
     elif amigaHardware == "amiga600" :
         print("Amiga Hardware 600 ECS")
-        # Nothing much needed for a600 uae4arm does what needed just with the right kickstart
+        # Nothing much needed for a600, amiberry generates right conf just with the right kickstart
         fUaeConfig.save("fastmem_size","8")
     elif amigaHardware == "amigacd32" :
         print ("Amiga Hardware CD32")
@@ -155,7 +155,7 @@ def generateGraphicConf(fUaeConfig) :
     # collision_level=playfields
     
     # Old Pandora Stuff for WHDL seems totally useless
-    # pandora.floppy_path=/recalbox/share/emulateurs/amiga/uae4arm/disks/
+    # pandora.floppy_path=/recalbox/share/emulateurs/amiga/amiberry/disks/
     # pandora.hardfile_path=/recalbox/share/roms/amiga/
     # ; host-specific
     # pandora.blitter_in_partial_mode=0
