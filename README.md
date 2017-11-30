@@ -27,9 +27,6 @@ You may only need some of them if you don't want to use all systems
 | 646773759326fbac3b2311fd8c8793ee    | kick31.rom      | ADF & WHDL on Amiga 1200   |
 | 5f8924d013dd57a89cf349f4cdedc6b1    | kick31CD32.rom      | Amiga CD32   |
 | bb72565701b1b6faece07d68ea5da639    | CD32ext.rom      | Amiga CD32   |
-| 31e5bd652a7b4f2a818cd7d11a43b8bf    | cd32.nvr      | Amiga CD32   |
-
-- This last file `cd32.nrv` seems to be created by the emulator, just create a blank file of the same name and everything should be ok.
 
 Usage
 -------
