@@ -22,7 +22,7 @@
 ;NoFlushMem			;do not flush memory
 ;NoMemReverse			;do not allocate memory reverse
 ;NoNetwork			;do not connect to the internet
-;NoWriteCache			;disable the disk write cache
+NoWriteCache			;disable the disk write cache
 ;NTSC				;force NTSC viedo mode
 ;PAL				;force PAL viedo mode
 ;Proxy=proxyhost:3128		;use this HTTP-proxy, [user:password@]hostname[:port]
