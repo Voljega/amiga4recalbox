@@ -1,5 +1,5 @@
 #!/bin/bash
-supportVersion="17.11.10.2"
+supportVersion="17.12.01"
 echo " "
 echo "This script is going to install or update amiga on your recalbox, which should be in version $supportVersion"
 echo "Please update your recalbox before using this script or wait for a new amiga4recalbox update if this is not the case"

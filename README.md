@@ -6,6 +6,8 @@ Compatible with ADF and WHD games
 
 Using Midwan's amiberry 2.1 for RPI https://github.com/midwan/amiberry
 
+For Recalbox v17.12.01
+
 
 Installation and update from previous versions
 ----------------------------------------------

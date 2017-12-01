@@ -26,7 +26,7 @@ recalboxBins = {'dosbox'      : '/usr/bin/dosbox'
               , 'reicast'     : '/usr/bin/reicast.elf'
               , 'scummvm'     : '/usr/bin/scummvm'
               , 'vice'        : '/usr/bin/x64'
-              , 'dolphin'     : '/usr/bin/dolphin-emu-nogui'
+              , 'dolphin'     : '/usr/bin/dolphin-emu'
               , 'advancemame' : '/usr/bin/advmame'
               , 'amiberry'    : '/recalbox/share/emulateurs/amiberry'
 }
@@ -83,6 +83,8 @@ reicastBios = BIOS
 dolphinConfig = CONF + "/dolphin-emu"
 dolphinData   = SAVES + "/dolphin-emu"
 dolphinIni    = dolphinConfig + '/Dolphin.ini'
+dolphinHKeys  = dolphinConfig + '/Hotkeys.ini'
+dolphinGFX    = dolphinConfig + '/GFX.ini'
 
 ppssppConf = CONF + '/ppsspp/PSP/SYSTEM'
 ppssppControlsIni = ppssppConf + '/controls.ini'
