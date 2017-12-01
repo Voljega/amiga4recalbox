@@ -86,7 +86,11 @@ You can add a second file (totally optional) to your setup to use those paramete
 
 The game will then launch.
 
+Here's a little list of games necessiting that extra configuration.
 
+| Game   | extra parameter   |
+| ---   | ---   |
+| HistoryLine 1914-1918    | `CUSTOM1=1`      |
 
 
 KNOWN BUGS
