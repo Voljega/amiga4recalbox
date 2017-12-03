@@ -6,7 +6,7 @@ Compatible with ADF and WHD games
 
 Using Midwan's amiberry 2.1 for RPI https://github.com/midwan/amiberry
 
-For Recalbox v17.12.01
+For Recalbox v17.12.02
 
 
 Installation and update from previous versions
@@ -86,9 +86,9 @@ You can add a second file (totally optional) to your setup to use those paramete
 
 The game will then launch.
 
-Here's a little list of games necessiting that extra configuration.
+Here's a little list of games requiring those extra parameters.
 
-| Game   | extra parameter   |
+| Game   | extra parameter(s)   |
 | ---   | ---   |
 | HistoryLine 1914-1918    | `CUSTOM1=1`      |
 
