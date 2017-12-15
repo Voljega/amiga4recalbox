@@ -90,7 +90,8 @@ Here's a little list of games requiring those extra parameters.
 
 | Game   | extra parameter(s)   |
 | ---   | ---   |
-| HistoryLine 1914-1918    | `CUSTOM1=1`      |
+| HistoryLine 1914-1918    | `CUSTOM1=1` for intro, `CUSTOM1=2` for game    |
+| The Settlers / Die Siedlers    | `CUSTOM1=1` skips intro    |
 
 
 KNOWN BUGS

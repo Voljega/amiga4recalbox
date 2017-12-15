@@ -87,7 +87,8 @@ def generateWHDL(fullName,romFolder,gameName,amigaHardware,controller) :
                 print("Using slave file %s" %slaveFile)
                 fStartupSeq.write("WHDload "+slaveFile+" Preload\n")
                 
-        fStartupSeq.write("exitemu\n")
+        # comment for now
+        # fStartupSeq.write("exitemu\n")
     finally :
         fStartupSeq.close()
     
