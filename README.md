@@ -1,5 +1,9 @@
 # Custom Amiga Emulation for Recalbox
 
+THIS IS NOW INTEGRATED IN RECALBOX, PLEASE DON'T USE THIS VERSION ANYMORE
+
+Code is kept here for documentation purposes
+
 For Raspberry Pi 1,2 or 3
 
 Compatible with ADF and WHD games
